@@ -1,4 +1,4 @@
-package com.iot_dbp.iot_dbp;
+package com.DBP.IoT_DBP;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class IotDbpApplicationTests {
+public class IoTDbpApplicationTests {
 
 	@Test
 	public void contextLoads() {
