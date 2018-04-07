@@ -47,14 +47,12 @@ class SensorGroup {
 	 * @param value
 	 */
 	public EnumScale getValueRisk(double value) {
-		EnumScale risk = HazardScale.NONE;
-		Iterator iter = this.valueRanges.iterator();
 		for(ValueRangeRisk range : this.valueRanges) {
 			if (range.isIn(value)) {
-				
+				return range.getRisk();
 			}
 		}
-		return risk;
+		return null;
 	}
 
 	public SensorGroup() {

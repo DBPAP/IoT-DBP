@@ -2,7 +2,7 @@ package com.DBP.IoT.businessCore.sensorSystem;
 
 /**
  * Rappresenta un intervallo di valori reali su R.
- * L'intervallo non può essere chiuso per assicurare la continuità su R con intervalli adiacenti.
+ * L'intervallo non può essere chiuso per assicurare la continuità su R di intervalli adiacenti.
  * Se "start = -∞" , allora "end" dovrà essere un numero reale oppure +∞;
  * Se "end = +∞", allora start dovrà essere un numero reale oppure -∞;
  * Se start ed end sono due numeri reali allora l'intervallo è chiuso a sinistra ed aperto a destra :
@@ -12,24 +12,14 @@ package com.DBP.IoT.businessCore.sensorSystem;
  */
 public class ValueRange {
 
-	private int ID;
+	private int id;
 	private double start;
 	private double end;
 
 	public ValueRange() {
-		// TODO - implement ValueRange.ValueRange
-		throw new UnsupportedOperationException();
+		
 	}
 
-	/**
-	 * 
-	 * @param start
-	 * @param end
-	 */
-	public ValueRange(double start, double end) {
-		// TODO - implement ValueRange.ValueRange
-		throw new UnsupportedOperationException();
-	}
 
 	/**
 	 * 
@@ -56,17 +46,15 @@ public class ValueRange {
 	}
 
 	public int getID() {
-		// TODO - implement ValueRange.getID
-		throw new UnsupportedOperationException();
+		return this.id;
 	}
 
 	/**
 	 * 
 	 * @param ID
 	 */
-	public void setID(int ID) {
-		// TODO - implement ValueRange.setID
-		throw new UnsupportedOperationException();
+	public void setID(int id) {
+		this.id=id;
 	}
 
 }

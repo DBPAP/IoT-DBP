@@ -1,12 +1,12 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
-import Int;
 
 public class ValueRangeRisk {
 
 	private int ID;
 	private EnumScale risk;
 	private Int GroupID;
+	private ValueRange range;
 
 	/**
 	 * 
