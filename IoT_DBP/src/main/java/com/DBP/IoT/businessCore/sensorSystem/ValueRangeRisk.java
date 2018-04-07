@@ -1,20 +1,21 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
-import Int;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 public class ValueRangeRisk {
 
-	private int ID;
+	private int internalId;
 	private EnumScale risk;
-	private Int GroupID;
+	private String groupId;
+	private ValueRange range;
 
 	/**
 	 * 
 	 * @param range
 	 */
 	public void setRange(ValueRange range) {
-		// TODO - implement ValueRangeRisk.setRange
-		throw new UnsupportedOperationException();
+		this.range=range;
 	}
 
 	/**
@@ -31,9 +32,11 @@ public class ValueRangeRisk {
 	 * @param end
 	 * @param risk
 	 */
-	public ValueRangeRisk(double start, double end, EnumScale risk) {
-		// TODO - implement ValueRangeRisk.ValueRangeRisk
-		throw new UnsupportedOperationException();
+	public ValueRangeRisk(double start, double end, EnumScale risk,String groupId) {
+		this.range=new ValueRange(start,end);
+		this.risk=risk;
+		this.groupId=groupId;
+		
 	}
 
 	/**
@@ -41,36 +44,45 @@ public class ValueRangeRisk {
 	 * @param value
 	 */
 	public boolean isIn(double value) {
-		// TODO - implement ValueRangeRisk.isIn
-		throw new UnsupportedOperationException();
+		return true;
 	}
 
-	public void getRange() {
-		// TODO - implement ValueRangeRisk.getRange
-		throw new UnsupportedOperationException();
+	public ValueRange getRange() {
+		return range;
 	}
 
 	public ValueRangeRisk() {
-		// TODO - implement ValueRangeRisk.ValueRangeRisk
-		throw new UnsupportedOperationException();
+		
 	}
 
-	public int getID() {
-		// TODO - implement ValueRangeRisk.getID
-		throw new UnsupportedOperationException();
+	public int getInternalID() {
+		return this.internalId;
 	}
 
 	/**
 	 * 
-	 * @param ID
+	 * @param internalID
 	 */
-	public void setID(int ID) {
-		// TODO - implement ValueRangeRisk.setID
-		throw new UnsupportedOperationException();
+	public void setId(int internalID) {
+		this.internalId=internalID;
 	}
 
 	public EnumScale getRisk() {
 		return this.risk;
+	}
+
+	/**
+	 * @return the groupID
+	 */
+	public String getGroupId() {
+		return groupId;
+	}
+
+	/**
+	 * @param groupID the groupID to set
+	 */
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
 	}
 
 }

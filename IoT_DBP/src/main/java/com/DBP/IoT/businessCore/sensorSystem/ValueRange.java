@@ -7,18 +7,17 @@ package com.DBP.IoT.businessCore.sensorSystem;
  * Se "end = +∞", allora start dovrà essere un numero reale oppure -∞;
  * Se start ed end sono due numeri reali allora l'intervallo è chiuso a sinistra ed aperto a destra :
  *  "[start, end["
- * @author Tito
+ * @author DiBenedetto & Paolicelli
  *
  */
 public class ValueRange {
 
-	private int ID;
+	private int internalId;
 	private double start;
 	private double end;
 
 	public ValueRange() {
-		// TODO - implement ValueRange.ValueRange
-		throw new UnsupportedOperationException();
+		
 	}
 
 	/**
@@ -27,8 +26,8 @@ public class ValueRange {
 	 * @param end
 	 */
 	public ValueRange(double start, double end) {
-		// TODO - implement ValueRange.ValueRange
-		throw new UnsupportedOperationException();
+		this.start = start;
+		this.end = end;
 	}
 
 	/**
@@ -55,18 +54,19 @@ public class ValueRange {
 		return this.end;
 	}
 
-	public int getID() {
-		// TODO - implement ValueRange.getID
-		throw new UnsupportedOperationException();
+	/**
+	 * @return the internalId
+	 */
+	public int getInternalId() {
+		return internalId;
 	}
 
 	/**
-	 * 
-	 * @param ID
+	 * @param internalId the internalId to set
 	 */
-	public void setID(int ID) {
-		// TODO - implement ValueRange.setID
-		throw new UnsupportedOperationException();
+	public void setInternalId(int internalId) {
+		this.internalId = internalId;
 	}
 
+	
 }

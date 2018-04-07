@@ -1,46 +1,33 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import string;
-import Collection;
-import FormatType;
+
+import java.util.List;
+
+
+
 
 class SensorType {
 
-	private int ID;
-	private string sensorTypeIdentifier;
-	private Collection malfunctionCodes;
+	private int id;
+	private String sensorTypeIdentifier;
 	private String measureUnit;
+	private List<SensorDataField> sensorFormat;
+	
 
-	public FormatType getFormat() {
-		// TODO - implement SensorType.getFormat
-		throw new UnsupportedOperationException();
+		
+	public SensorType() {
+		
 	}
-
-	/**
-	 * 
-	 * @param format
-	 */
-	public void setFormat(Collection format) {
-		// TODO - implement SensorType.setFormat
-		throw new UnsupportedOperationException();
+	public SensorType(int id,String sensorTypeIdentifier,String measureUnit,List<SensorDataField> sensorFormat ) {
+		this.sensorFormat=sensorFormat;
+		this.sensorTypeIdentifier=sensorTypeIdentifier;
+		this.id=id;
+		this.measureUnit=measureUnit;
+		
 	}
-
-	public void IoTIncSensorType() {
-		// TODO - implement SensorType.IoTIncSensorType
-		throw new UnsupportedOperationException();
-	}
-
-	public Collection getMalfunctionCodes() {
-		return this.malfunctionCodes;
-	}
-
-	/**
-	 * 
-	 * @param malfunctionCodes
-	 */
-	public void setMalfunctionCodes(Collection malfunctionCodes) {
-		this.malfunctionCodes = malfunctionCodes;
-	}
+	
 
 	public String getMeasureUnit() {
 		return this.measureUnit;
@@ -54,21 +41,19 @@ class SensorType {
 		this.measureUnit = measureUnit;
 	}
 
-	public int getID() {
-		// TODO - implement SensorType.getID
-		throw new UnsupportedOperationException();
+	public int getId() {
+		return this.id;
 	}
 
 	/**
 	 * 
 	 * @param ID
 	 */
-	public void setID(int ID) {
-		// TODO - implement SensorType.setID
-		throw new UnsupportedOperationException();
+	public void setId(int ID) {
+		this.id=id;
 	}
 
-	public string getSensorTypeIdentifier() {
+	public String getSensorTypeIdentifier() {
 		return this.sensorTypeIdentifier;
 	}
 
@@ -76,8 +61,18 @@ class SensorType {
 	 * 
 	 * @param sensorTypeIdentifier
 	 */
-	public void setSensorTypeIdentifier(string sensorTypeIdentifier) {
+	public void setSensorTypeIdentifier(String sensorTypeIdentifier) {
 		this.sensorTypeIdentifier = sensorTypeIdentifier;
+	}
+
+	/**
+	 * @param sensorFormat the sensorFormat to set
+	 */
+	public void setSensorFormat(List<SensorDataField> sensorFormat) {
+		this.sensorFormat = sensorFormat;
+	}
+	public List<SensorDataField> setSensorFormat() {
+		return this.sensorFormat ;
 	}
 
 }
