@@ -1,5 +1,6 @@
 package com.DBP.IoT.businessCore.sensorSystem;
-
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Rappresenta un intervallo di valori reali su R.
  * L'intervallo non può essere chiuso per assicurare la continuità su R con intervalli adiacenti.

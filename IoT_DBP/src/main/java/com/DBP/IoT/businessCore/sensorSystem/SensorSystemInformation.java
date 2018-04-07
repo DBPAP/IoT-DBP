@@ -5,23 +5,11 @@ import Site;
 
 public class SensorSystemInformation {
 
-	private int ID;
+	private int id;
 	private Client client;
 	private Site site;
 
-	public int getID() {
-		// TODO - implement SensorSystemInformation.getID
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param ID
-	 */
-	public void setID(int ID) {
-		// TODO - implement SensorSystemInformation.setID
-		throw new UnsupportedOperationException();
-	}
+	
 
 	public Client getClient() {
 		return this.client;
