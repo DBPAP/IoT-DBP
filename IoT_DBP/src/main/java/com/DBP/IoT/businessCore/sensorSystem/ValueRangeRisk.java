@@ -14,6 +14,24 @@ public class ValueRangeRisk {
 
 	private ValueRange range;
 
+	
+	public ValueRangeRisk() {
+		
+	}
+
+	/**
+	 * 
+	 * @param start
+	 * @param end
+	 * @param risk
+	 */
+	public ValueRangeRisk(double start, double end, EnumScale risk,String groupId) {
+		this.range=new ValueRange(start,end);
+		this.risk=risk;
+		this.groupId=groupId;
+		
+	}
+
 	/**
 	 * 
 	 * @param range
@@ -31,22 +49,6 @@ public class ValueRangeRisk {
 	public void setRisk(EnumScale risk) {
 		this.risk = risk;
 	}
-
-
-	/**
-	 * 
-	 * @param start
-	 * @param end
-	 * @param risk
-	 */
-	public ValueRangeRisk(double start, double end, EnumScale risk,String groupId) {
-		this.range=new ValueRange(start,end);
-		this.risk=risk;
-		this.groupId=groupId;
-		
-	}
-
-
 	/**
 	 * @return true se un valore è all'interno di un intervallo valori
 	 * @param value
@@ -64,9 +66,7 @@ public class ValueRangeRisk {
 
 	}
 
-	public ValueRangeRisk() {
-		
-	}
+	
 
 
 	public int getInternalID() {
