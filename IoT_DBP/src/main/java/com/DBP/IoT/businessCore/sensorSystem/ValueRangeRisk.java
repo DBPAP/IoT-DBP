@@ -3,9 +3,9 @@ package com.DBP.IoT.businessCore.sensorSystem;
 
 public class ValueRangeRisk {
 
-	private int ID;
+	private int id;
 	private EnumScale risk;
-	private Int GroupID;
+	private int GroupID;
 	private ValueRange range;
 
 	/**
@@ -13,8 +13,7 @@ public class ValueRangeRisk {
 	 * @param range
 	 */
 	public void setRange(ValueRange range) {
-		// TODO - implement ValueRangeRisk.setRange
-		throw new UnsupportedOperationException();
+		this.range=range;
 	}
 
 	/**
@@ -25,39 +24,27 @@ public class ValueRangeRisk {
 		this.risk = risk;
 	}
 
-	/**
-	 * 
-	 * @param start
-	 * @param end
-	 * @param risk
-	 */
-	public ValueRangeRisk(double start, double end, EnumScale risk) {
-		// TODO - implement ValueRangeRisk.ValueRangeRisk
-		throw new UnsupportedOperationException();
-	}
-
+	
 	/**
 	 * 
 	 * @param value
 	 */
 	public boolean isIn(double value) {
-		// TODO - implement ValueRangeRisk.isIn
-		throw new UnsupportedOperationException();
+		double start = this.range.getStart();
+		double end = this.range.getEnd();
+		return ((start <= value) && (value<end));
 	}
 
-	public void getRange() {
-		// TODO - implement ValueRangeRisk.getRange
-		throw new UnsupportedOperationException();
+	public ValueRange getRange() {
+		return this.range;
 	}
 
 	public ValueRangeRisk() {
-		// TODO - implement ValueRangeRisk.ValueRangeRisk
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public int getID() {
-		// TODO - implement ValueRangeRisk.getID
-		throw new UnsupportedOperationException();
+		return this.id;
 	}
 
 	/**
@@ -65,8 +52,7 @@ public class ValueRangeRisk {
 	 * @param ID
 	 */
 	public void setID(int ID) {
-		// TODO - implement ValueRangeRisk.setID
-		throw new UnsupportedOperationException();
+		this.id=id;
 	}
 
 	public EnumScale getRisk() {
