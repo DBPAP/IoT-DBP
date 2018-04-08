@@ -1,16 +1,17 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.HashMap;
+
+import java.util.Map;
 
 public class SensorSystem {
 
 	private static SensorSystem instance;
 	
-	private   List<Sensor> sensors;
-	private   List<SensorGroup> sensorGroups ;
-	private   List<SensorType> sensorTypes;
+	private   Map<String,Sensor> sensors;
+	private   Map<String,SensorGroup> sensorGroups ;
+	private   Map<String,SensorType> sensorTypes;
 	
 
 	/**
@@ -18,12 +19,7 @@ public class SensorSystem {
 	 * @param PublicID
 	 */
 	public void removeSensor(String PublicID) {
-		for(Sensor s:sensors){
-			if(s.getPublicID() == PublicID) {
-				sensors.remove(s);
-			}
-			
-		}
+			sensors.remove(PublicID);
 	}
 
 	public static SensorSystem getIstance() {
@@ -35,20 +31,16 @@ public class SensorSystem {
 	}
 
 	private SensorSystem() {
-		this.sensors = new ArrayList<Sensor>();
-		sensorGroups = new ArrayList<SensorGroup>();
-		sensorTypes = new ArrayList<SensorType>();
+		this.sensors = new HashMap<String,Sensor>();
+		sensorGroups = new HashMap<String,SensorGroup>();
+		sensorTypes = new HashMap<String,SensorType>();
 	}
 	/**
 	 * 
 	 * @param publicID
 	 */
 	public void getSensorByPublicID(String publicID) {
-		for(Sensor s:sensors){
-			if(s.getPublicID() == publicID) {
-				sensors.remove(s);
-			}
-		}
+		sensors.get(publicID);
 	}
 
 	/**
@@ -56,58 +48,20 @@ public class SensorSystem {
 	 * @param sensor
 	 */
 	public void insertSensor(Sensor sensor) {
-		if(!ifExistSensor(sensor)) {
-			sensors.add(sensor);
+		if(!sensors.containsKey(sensor.getPublicID())) {
+			sensors.put(sensor.getPublicID(),sensor);
 		}else{
 			throw new  IllegalArgumentException("Sensor Esistente");
 		}
 	}
-	/**
-	 * 
-	 * @param sensor
-	 * @return true se il sensore è presente nella collezione
-	 */
-	private boolean ifExistSensor(Sensor sensor) {
-		for(Sensor s:sensors){
-			if(s.getPublicID().equals(sensor.getPublicID())) {
-				return true;
-			}	
-		}
-		return false;
-	}
-	/**
-	 * 
-	 * @param group
-	 * @return true se il gruppo è presente nella collezione
-	 */
-	private boolean ifExistGruop(SensorGroup group) {
-		for(SensorGroup g:sensorGroups){
-			if(g.getGroupIdentifier().equals(group.getGroupIdentifier())) {
-				return true;
-			}	
-		}
-		return false;
-	}
-	/**
-	 * 
-	 * @param type
-	 * @return
-	 */
-	private boolean ifExistType(SensorType type) {
-		for(SensorType t:sensorTypes){
-			if(t.getSensorTypeIdentifier().equals(type.getSensorTypeIdentifier())) {
-				return true;
-			}	
-		}
-		return false;
-	}
+	
 	/**
 	 * 
 	 * @param type
 	 */
 	public void insertType(SensorType type) {
-		if(!ifExistType(type)) {
-			sensorTypes.add(type);
+		if(!sensorTypes.containsKey(type.getSensorTypeIdentifier())) {
+			sensorTypes.put(type.getSensorTypeIdentifier(),type);
 		}else {
 			//da modificare
 			throw new  IllegalArgumentException("Tipo già esistente");
@@ -120,63 +74,45 @@ public class SensorSystem {
 	 * @param group
 	 */
 	public void insertGroup(SensorGroup group) {
-		if(!ifExistGruop(group)) {
-			sensorGroups.add(group);
+		if(!sensorGroups.containsKey(group.getGroupIdentifier())) {
+			sensorGroups.put(group.getGroupIdentifier(),group);
 		}else {
 			//da modificare
 			throw new  IllegalArgumentException("Gruppo già esistente");
 		}
 	}
 	
-	private void removeSensorsByGroupId(String groupId) {
-		for(Sensor s:sensors){
-			if(s.getGroup().getGroupIdentifier().equals(groupId)) {
-				sensors.remove(s);
-				break;
-			}	
-		}
-	}
-	private boolean checkGroup(String groupId) {
-		for(SensorGroup g:sensorGroups){
-			if(g.getGroupIdentifier().equals(groupId)) {
-				return true;			
-			}
-		
-		}
-		return false;
-	}
+	
+	
 		
 	public void removeGroup(String groupId) {
-		if(checkGroup(groupId)) {
-			removeSensorsByGroupId( groupId);
-			for(SensorGroup g:sensorGroups){
-				if(g.getGroupIdentifier().equals(groupId)) {
-					sensorGroups.remove(g);
+		if(sensorGroups.containsKey(groupId)){
+			ArrayList<Sensor> sen= (ArrayList<Sensor>)sensors.values();
+			for(Sensor s : sen) {
+				if(s.getGroup().getGroupIdentifier().equals(groupId)) {
+				sensors.remove(s.getPublicID());
 				}
-			}
-		}else{
+			}		
+			sensorGroups.remove(groupId);
+		} else{
 			//da modificare
 			throw new  IllegalArgumentException("Gruppo Non Esistente");
 		}
 	}
+	
 	/**
 	 * @return false se esiste un gruppo associato al tipo
 	 */
-	private boolean checkSensorTypeToGruoup(String typeId){
-		for(SensorGroup g:sensorGroups){
-			if(g.getType().getSensorTypeIdentifier().equals(typeId)) {
-				return false;
-			}
-		}
-	return true;	
-	}
+	
 	public void removeType(String typeId) {
-		if(checkSensorTypeToGruoup(typeId)){
-			for(SensorType t:sensorTypes){
-				if(t.getSensorTypeIdentifier().equals(typeId)) {
-					sensorTypes.remove(t);
+		if (sensorTypes.containsKey(typeId)){
+			ArrayList<SensorGroup> group= (ArrayList<SensorGroup>)sensorGroups.values();
+			for(SensorGroup g : group) {
+				if(g.getType().getSensorTypeIdentifier().equals(typeId)) {
+					throw new  IllegalArgumentException("tipo utilizzato da altri gruppi");
 				}
 			}
+			sensorTypes.remove(typeId);
 		}else{
 				//da modificare
 			throw new  IllegalArgumentException("Gruppo Non Esistente");

@@ -1,7 +1,7 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
-import SensorType_;
-import Collection;
+
+
 
 class SensorSystemBuildingUtility {
 
@@ -22,7 +22,7 @@ class SensorSystemBuildingUtility {
 	 * @param identifier
 	 * @param position
 	 */
-	public SensorGroup buildSensorGroup(SensorType_ type, String identifier, SensorGroupToPosition position) {
+	public SensorGroup buildSensorGroup(SensorType type, String identifier, SensorGroupToPosition position) {
 		// TODO - implement SensorSystemBuildingUtility.buildSensorGroup
 		throw new UnsupportedOperationException();
 	}
