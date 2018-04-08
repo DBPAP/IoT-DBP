@@ -3,7 +3,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Rappresenta un intervallo di valori reali su R.
- * L'intervallo non può essere chiuso per assicurare la continuità su R con intervalli adiacenti.
+ * L'intervallo non può essere chiuso per assicurare la continuità su R di intervalli adiacenti.
  * Se "start = -∞" , allora "end" dovrà essere un numero reale oppure +∞;
  * Se "end = +∞", allora start dovrà essere un numero reale oppure -∞;
  * Se start ed end sono due numeri reali allora l'intervallo è chiuso a sinistra ed aperto a destra :
@@ -13,7 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 public class ValueRange {
 
+<<<<<<< HEAD
 	private int internalId;
+=======
+	private int id;
+>>>>>>> refs/remotes/origin/master
 	private double start;
 	private double end;
 
@@ -21,6 +25,7 @@ public class ValueRange {
 		
 	}
 
+<<<<<<< HEAD
 	/**
 	 * 
 	 * @param start
@@ -30,6 +35,8 @@ public class ValueRange {
 		this.start = start;
 		this.end = end;
 	}
+=======
+>>>>>>> refs/remotes/origin/master
 
 	/**
 	 * 
@@ -55,18 +62,28 @@ public class ValueRange {
 		return this.end;
 	}
 
+
 	/**
 	 * @return the internalId
 	 */
 	public int getInternalId() {
 		return internalId;
+=======
+	public int getID() {
+		return this.id;
+>>>>>>> refs/remotes/origin/master
 	}
 
 	/**
 	 * @param internalId the internalId to set
 	 */
+<<<<<<< HEAD
 	public void setInternalId(int internalId) {
 		this.internalId = internalId;
+=======
+	public void setID(int id) {
+		this.id=id;
+>>>>>>> refs/remotes/origin/master
 	}
 
 	

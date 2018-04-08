@@ -1,5 +1,6 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -7,9 +8,9 @@ public class SensorSystem {
 
 	private static SensorSystem instance;
 	
-	private  List<Sensor> sensorsRunned;
-	private  List<SensorGroup> sensorGoupsRunned;
-	
+	private   List<Sensor> sensors;
+	private   List<SensorGroup> sensorGoups ;
+	private   List<SensorType> sensorsTypes;
 	
 
 	/**
@@ -17,31 +18,37 @@ public class SensorSystem {
 	 * @param PublicID
 	 */
 	public void removeSensor(String PublicID) {
-		for(Sensor s:sensorsRunned){
+		for(Sensor s:sensors){
 			if(s.getPublicID() == PublicID) {
-				sensorsRunned.remove(s);
+				sensors.remove(s);
 			}
 			
 		}
 	}
 
 	public static SensorSystem getIstance() {
-		// TODO - implement SensorSystem.getIstance
-		throw new UnsupportedOperationException();
+		if (instance==null) {
+			
+			instance = new SensorSystem();
+			}
+			return instance;
 	}
 
 	private SensorSystem() {
-		// TODO - implement SensorSystem.SensorSystem
-		throw new UnsupportedOperationException();
+		this.sensors = new ArrayList<Sensor>();
+		sensorGoups = new ArrayList<SensorGroup>();
+		sensorsTypes = new ArrayList<SensorType>();
 	}
-
 	/**
 	 * 
 	 * @param publicID
 	 */
 	public void getSensorByPublicID(String publicID) {
-		// TODO - implement SensorSystem.getSensorByPublicID
-		throw new UnsupportedOperationException();
+		for(Sensor s:sensors){
+			if(s.getPublicID() == publicID) {
+				sensors.remove(s);
+			}
+		}
 	}
 
 	/**
@@ -49,8 +56,7 @@ public class SensorSystem {
 	 * @param sensor
 	 */
 	public void insertSensor(Sensor sensor) {
-		// TODO - implement SensorSystem.insertSensor
-		throw new UnsupportedOperationException();
+		sensors.add(sensor);
 	}
 
 	/**
@@ -58,8 +64,7 @@ public class SensorSystem {
 	 * @param type
 	 */
 	public void insertType(SensorType type) {
-		// TODO - implement SensorSystem.insertType
-		throw new UnsupportedOperationException();
+		sensorsTypes.add(type);
 	}
 
 	/**
@@ -67,8 +72,7 @@ public class SensorSystem {
 	 * @param group
 	 */
 	public void insertGroup(SensorGroup group) {
-		// TODO - implement SensorSystem.insertGroup
-		throw new UnsupportedOperationException();
+		sensorGroup.add()
 	}
 
 	public void removeGroup() {

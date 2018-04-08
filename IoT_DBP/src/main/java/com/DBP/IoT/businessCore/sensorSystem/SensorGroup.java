@@ -8,11 +8,12 @@ import java.util.*;
 
 class SensorGroup {
 
-	private int id;
+	private int internalId;
 	private String groupIdentifier;
 	private SensorGroupToPosition position;
 	private List<ValueRangeRisk> valueRanges = new ArrayList<ValueRangeRisk>();
 	private List<Sensor> sensors = new ArrayList<Sensor>();
+	private SensorType type;
 	
 
 	/**
@@ -21,10 +22,11 @@ class SensorGroup {
 	 * @param end
 	 * @param risk
 	 */
-	public void setValueRange(ValueRangeRisk valueRange) {
+	public void insertValueRange(ValueRangeRisk valueRange) {
 		valueRanges.add(valueRange);
 		
 	}
+	
 
 	/**
 	 * 
@@ -35,7 +37,7 @@ class SensorGroup {
 	}
 
 	public boolean hasValueRange() {
-		return this.valueRanges.isEmpty();
+		return !(this.valueRanges.isEmpty());
 	}
 
 	public List<Sensor> getSensors() {
@@ -47,19 +49,26 @@ class SensorGroup {
 	 * @param value
 	 */
 	public EnumScale getValueRisk(double value) {
+<<<<<<< HEAD
 		EnumScale risk = IoTIncHazardScale.NONE;
 		Iterator iter = this.valueRanges.iterator();
 		for(ValueRangeRisk range : this.valueRanges) {
 			if (range.isIn(value)) {
 				
+=======
+		if (this.hasValueRange()) {
+			for(ValueRangeRisk range : this.valueRanges) {
+				if (range.isIn(value)) {
+					return range.getRisk();
+				}
+>>>>>>> refs/remotes/origin/master
 			}
 		}
-		return risk;
+		throw new UnsupportedOperationException();
 	}
 
 	public SensorGroup() {
-		// TODO - implement SensorGroup.SensorGroup
-		throw new UnsupportedOperationException();
+	
 	}
 
 	/**
@@ -69,28 +78,32 @@ class SensorGroup {
 	 * @param type
 	 */
 	public SensorGroup(String groupIdentifier, SensorGroupToPosition position, SensorType type) {
+<<<<<<< HEAD
 		// TODO - implement SensorGroup.SensorGroup
 		throw new UnsupportedOperationException();
+=======
+		this.groupIdentifier=groupIdentifier;
+		this.position=position;
+		this.type=type;
+>>>>>>> refs/remotes/origin/master
 	}
 
-	public int getID() {
-		// TODO - implement SensorGroup.getID
-		throw new UnsupportedOperationException();
+	
+	public int getInternalId() {
+		return this.internalId;
 	}
 
 	/**
 	 * 
 	 * @param ID
 	 */
-	public void setID(int ID) {
-		// TODO - implement SensorGroup.setID
-		throw new UnsupportedOperationException();
+	public void setInternalId(int id) {
+		this.internalId=id;
 	}
 
-	public ValueRange getValueRange() {
-		// TODO - implement SensorGroup.getValueRange
-		throw new UnsupportedOperationException();
-	}
+	/**public ValueRange getValueRange() {
+		return
+	}**/
 
 	public String getGroupIdentifier() {
 		return this.groupIdentifier;
@@ -112,14 +125,12 @@ class SensorGroup {
 	 * 
 	 * @param sensors
 	 */
-	public void setSensors(Collection sensors) {
-		// TODO - implement SensorGroup.setSensors
-		throw new UnsupportedOperationException();
+	public void setSensors(List<Sensor> sensors) {
+		this.sensors=sensors;
 	}
 
 	public SensorType getType() {
-		// TODO - implement SensorGroup.getType
-		throw new UnsupportedOperationException();
+		return this.type;
 	}
 
 	/**
@@ -127,8 +138,7 @@ class SensorGroup {
 	 * @param type
 	 */
 	public void setType(SensorType type) {
-		// TODO - implement SensorGroup.setType
-		throw new UnsupportedOperationException();
+		this.type=type;
 	}
 
 }
