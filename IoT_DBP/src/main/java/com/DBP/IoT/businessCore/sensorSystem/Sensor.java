@@ -54,6 +54,7 @@ class Sensor {
 		this.publicID = publicID;
 		this.brand=marca;
 		this.group= group;
+		this.type=group.getType();
 	}
 
 	public String getPublicID() {

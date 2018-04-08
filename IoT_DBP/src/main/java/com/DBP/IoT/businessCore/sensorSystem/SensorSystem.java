@@ -31,8 +31,8 @@ public class SensorSystem {
 
 	private SensorSystem() {
 		this.sensors = new HashMap<String,Sensor>();
-		sensorGroups = new HashMap<String,SensorGroup>();
-		sensorTypes = new HashMap<String,SensorType>();
+		this.sensorGroups = new HashMap<String,SensorGroup>();
+		this.sensorTypes = new HashMap<String,SensorType>();
 	}
 	/**
 	 * 
