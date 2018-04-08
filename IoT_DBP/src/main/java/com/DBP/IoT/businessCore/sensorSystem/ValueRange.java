@@ -13,11 +13,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 public class ValueRange {
 
-<<<<<<< HEAD
-	private int internalId;
-=======
+
+
 	private int id;
->>>>>>> refs/remotes/origin/master
 	private double start;
 	private double end;
 
@@ -25,7 +23,6 @@ public class ValueRange {
 		
 	}
 
-<<<<<<< HEAD
 	/**
 	 * 
 	 * @param start
@@ -35,8 +32,6 @@ public class ValueRange {
 		this.start = start;
 		this.end = end;
 	}
-=======
->>>>>>> refs/remotes/origin/master
 
 	/**
 	 * 
@@ -66,24 +61,19 @@ public class ValueRange {
 	/**
 	 * @return the internalId
 	 */
-	public int getInternalId() {
-		return internalId;
-=======
-	public int getID() {
+	
+	public int getId() {
 		return this.id;
->>>>>>> refs/remotes/origin/master
 	}
 
 	/**
 	 * @param internalId the internalId to set
 	 */
-<<<<<<< HEAD
-	public void setInternalId(int internalId) {
-		this.internalId = internalId;
-=======
-	public void setID(int id) {
+
+
+	public void setId(int id) {
 		this.id=id;
->>>>>>> refs/remotes/origin/master
+
 	}
 
 	
