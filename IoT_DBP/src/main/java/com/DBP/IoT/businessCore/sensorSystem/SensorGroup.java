@@ -49,19 +49,13 @@ class SensorGroup {
 	 * @param value
 	 */
 	public EnumScale getValueRisk(double value) {
-<<<<<<< HEAD
-		EnumScale risk = IoTIncHazardScale.NONE;
-		Iterator iter = this.valueRanges.iterator();
-		for(ValueRangeRisk range : this.valueRanges) {
-			if (range.isIn(value)) {
-				
-=======
+
 		if (this.hasValueRange()) {
 			for(ValueRangeRisk range : this.valueRanges) {
 				if (range.isIn(value)) {
 					return range.getRisk();
 				}
->>>>>>> refs/remotes/origin/master
+
 			}
 		}
 		throw new UnsupportedOperationException();
@@ -78,14 +72,11 @@ class SensorGroup {
 	 * @param type
 	 */
 	public SensorGroup(String groupIdentifier, SensorGroupToPosition position, SensorType type) {
-<<<<<<< HEAD
-		// TODO - implement SensorGroup.SensorGroup
-		throw new UnsupportedOperationException();
-=======
+
 		this.groupIdentifier=groupIdentifier;
 		this.position=position;
 		this.type=type;
->>>>>>> refs/remotes/origin/master
+
 	}
 
 	
