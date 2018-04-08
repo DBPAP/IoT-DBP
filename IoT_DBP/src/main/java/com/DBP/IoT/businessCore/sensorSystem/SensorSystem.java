@@ -13,9 +13,7 @@ public class SensorSystem {
 	private   Map<String,SensorGroup> sensorGroups ;
 	private   Map<String,SensorType> sensorTypes;
 	
-
 	/**
-	 *
 	 * @param PublicID
 	 */
 	public void removeSensor(String PublicID) {
