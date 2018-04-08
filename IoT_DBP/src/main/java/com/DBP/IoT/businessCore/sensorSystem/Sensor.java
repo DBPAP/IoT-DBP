@@ -50,9 +50,10 @@ class Sensor {
 	 * @param publicID
 	 * @param marca
 	 */
-	public Sensor(String publicID, String marca) {
+	public Sensor(String publicID, String marca, SensorGroup group) {
 		this.publicID = publicID;
 		this.brand=marca;
+		this.group= group;
 	}
 
 	public String getPublicID() {
