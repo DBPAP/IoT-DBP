@@ -1,30 +1,28 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
-import string;
 
 class Sensor {
 
 	private int internalID;
 	private String publicID;
-	private string brand;
+	private String brand;
+	private SensorType type;
+	private SensorGroup group;
 
 	public SensorType getType() {
-		// TODO - implement Sensor.getType
-		throw new UnsupportedOperationException();
+		return this.type;
 	}
 
 	public SensorGroup getGroup() {
-		// TODO - implement Sensor.getGroup
-		throw new UnsupportedOperationException();
+		return this.group;
 	}
 
 	/**
 	 * 
-	 * @param ID
+	 * @param publicId
 	 */
-	public void setPublicID(string ID) {
-		// TODO - implement Sensor.setPublicID
-		throw new UnsupportedOperationException();
+	public void setPublicID(String publicId) {
+		this.publicID=publicId;
 	}
 
 	/**
@@ -32,8 +30,7 @@ class Sensor {
 	 * @param sensorType
 	 */
 	public void setType(SensorType sensorType) {
-		// TODO - implement Sensor.setType
-		throw new UnsupportedOperationException();
+		this.type =sensorType;
 	}
 
 	/**
@@ -41,23 +38,21 @@ class Sensor {
 	 * @param sensorGroup
 	 */
 	public void setGroup(SensorGroup sensorGroup) {
-		// TODO - implement Sensor.setGroup
-		throw new UnsupportedOperationException();
+		this.group=sensorGroup;
 	}
 
 	public Sensor() {
-		// TODO - implement Sensor.Sensor
-		throw new UnsupportedOperationException();
+	
 	}
 
 	/**
 	 * 
-	 * @param ID
+	 * @param publicID
 	 * @param marca
 	 */
-	public Sensor(string ID, string marca) {
-		// TODO - implement Sensor.Sensor
-		throw new UnsupportedOperationException();
+	public Sensor(String publicID, String marca) {
+		this.publicID = publicID;
+		this.brand=marca;
 	}
 
 	public String getPublicID() {
@@ -76,7 +71,7 @@ class Sensor {
 		this.internalID = internalID;
 	}
 
-	public string getBrand() {
+	public String getBrand() {
 		return this.brand;
 	}
 
@@ -84,7 +79,7 @@ class Sensor {
 	 * 
 	 * @param brand
 	 */
-	public void setBrand(string brand) {
+	public void setBrand(String brand) {
 		this.brand = brand;
 	}
 

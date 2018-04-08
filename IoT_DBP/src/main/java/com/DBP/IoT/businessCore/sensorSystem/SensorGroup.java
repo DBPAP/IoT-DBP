@@ -1,13 +1,19 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
-import string;
-import Collection;
+
+
+import java.util.*;
+
+
 
 class SensorGroup {
 
-	private int ID;
-	private string groupIdentifier;
+	private int id;
+	private String groupIdentifier;
 	private SensorGroupToPosition position;
+	private List<ValueRangeRisk> valueRanges = new ArrayList<ValueRangeRisk>();
+	private List<Sensor> sensors = new ArrayList<Sensor>();
+	
 
 	/**
 	 * 
@@ -15,9 +21,9 @@ class SensorGroup {
 	 * @param end
 	 * @param risk
 	 */
-	public void setValueRange(double start, double end, EnumScale risk) {
-		// TODO - implement SensorGroup.setValueRange
-		throw new UnsupportedOperationException();
+	public void setValueRange(ValueRangeRisk valueRange) {
+		valueRanges.add(valueRange);
+		
 	}
 
 	/**
@@ -29,13 +35,11 @@ class SensorGroup {
 	}
 
 	public boolean hasValueRange() {
-		// TODO - implement SensorGroup.hasValueRange
-		throw new UnsupportedOperationException();
+		return this.valueRanges.isEmpty();
 	}
 
-	public Collection<Sensor> getSensors() {
-		// TODO - implement SensorGroup.getSensors
-		throw new UnsupportedOperationException();
+	public List<Sensor> getSensors() {
+		return this.sensors;
 	}
 
 	/**
@@ -43,8 +47,14 @@ class SensorGroup {
 	 * @param value
 	 */
 	public EnumScale getValueRisk(double value) {
-		// TODO - implement SensorGroup.getValueRisk
-		throw new UnsupportedOperationException();
+		EnumScale risk = IoTIncHazardScale.NONE;
+		Iterator iter = this.valueRanges.iterator();
+		for(ValueRangeRisk range : this.valueRanges) {
+			if (range.isIn(value)) {
+				
+			}
+		}
+		return risk;
 	}
 
 	public SensorGroup() {
@@ -58,7 +68,7 @@ class SensorGroup {
 	 * @param position
 	 * @param type
 	 */
-	public SensorGroup(string groupIdentifier, SensorGroupToPosition position, SensorType type) {
+	public SensorGroup(String groupIdentifier, SensorGroupToPosition position, SensorType type) {
 		// TODO - implement SensorGroup.SensorGroup
 		throw new UnsupportedOperationException();
 	}
@@ -82,7 +92,7 @@ class SensorGroup {
 		throw new UnsupportedOperationException();
 	}
 
-	public string getGroupIdentifier() {
+	public String getGroupIdentifier() {
 		return this.groupIdentifier;
 	}
 
@@ -90,7 +100,7 @@ class SensorGroup {
 	 * 
 	 * @param groupIdentifier
 	 */
-	public void setGroupIdentifier(string groupIdentifier) {
+	public void setGroupIdentifier(String groupIdentifier) {
 		this.groupIdentifier = groupIdentifier;
 	}
 

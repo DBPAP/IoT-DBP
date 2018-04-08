@@ -1,29 +1,25 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
-import string;
 
 public class Position implements SensorGroupToPosition {
 
 	private int ID;
-	private string identifyingName;
+	private String identifyingName;
 
 	public Position() {
-		// TODO - implement Position.Position
-		throw new UnsupportedOperationException();
+	
 	}
 
 	/**
 	 * 
 	 * @param IdentifyingName
 	 */
-	public Position(string IdentifyingName) {
-		// TODO - implement Position.Position
-		throw new UnsupportedOperationException();
+	public Position(String IdentifyingName) {
+		this.identifyingName = IdentifyingName;
 	}
 
 	public int getID() {
-		// TODO - implement Position.getID
-		throw new UnsupportedOperationException();
+		return this.ID;
 	}
 
 	/**
@@ -31,20 +27,20 @@ public class Position implements SensorGroupToPosition {
 	 * @param ID
 	 */
 	public void setID(int ID) {
-		// TODO - implement Position.setID
-		throw new UnsupportedOperationException();
+		this.ID = ID;
 	}
 
 	public String getIdentifyingName() {
 		// TODO - implement Position.getIdentifyingName
-		throw new UnsupportedOperationException();
+		return this.identifyingName; 
+	
 	}
 
 	/**
 	 * 
 	 * @param identifier
 	 */
-	public void setIdentifyingName(string identifier) {
+	public void setIdentifyingName(String identifier) {
 		this.identifyingName = identifier;
 	}
 

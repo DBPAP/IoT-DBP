@@ -1,4 +1,4 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
 
 import IoTIncSensorDetail;
 

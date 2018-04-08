@@ -1,16 +1,28 @@
-package businessCore.sensorSystem;
+package com.DBP.IoT.businessCore.sensorSystem;
+
+import java.util.Iterator;
+import java.util.List;
 
 public class SensorSystem {
 
 	private static SensorSystem instance;
+	
+	private  List<Sensor> sensorsRunned;
+	private  List<SensorGroup> sensorGoupsRunned;
+	
+	
 
 	/**
 	 * 
 	 * @param PublicID
 	 */
 	public void removeSensor(String PublicID) {
-		// TODO - implement SensorSystem.removeSensor
-		throw new UnsupportedOperationException();
+		for(Sensor s:sensorsRunned){
+			if(s.getPublicID() == PublicID) {
+				sensorsRunned.remove(s);
+			}
+			
+		}
 	}
 
 	public static SensorSystem getIstance() {

@@ -14,8 +14,8 @@ public class ValueRangeRisk {
 	 * 
 	 * @param range
 	 */
-	public void setRange(ValueRange range) {
-		this.range=range;
+	public void setRange(double start, double end) {
+		this.range=new ValueRange(start,end);
 	}
 
 	/**

@@ -74,5 +74,6 @@ class SensorType {
 	public List<SensorDataField> setSensorFormat() {
 		return this.sensorFormat ;
 	}
+	
 
 }
