@@ -1,5 +1,6 @@
 package com.DBP.IoT.businessCore.sensorSystem;
-
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Rappresenta un intervallo di valori reali su R.
  * L'intervallo non può essere chiuso per assicurare la continuità su R di intervalli adiacenti.
@@ -7,10 +8,12 @@ package com.DBP.IoT.businessCore.sensorSystem;
  * Se "end = +∞", allora start dovrà essere un numero reale oppure -∞;
  * Se start ed end sono due numeri reali allora l'intervallo è chiuso a sinistra ed aperto a destra :
  *  "[start, end["
- * @author Tito
+ * @author DiBenedetto & Paolicelli
  *
  */
 public class ValueRange {
+
+
 
 	private int id;
 	private double start;
@@ -20,6 +23,15 @@ public class ValueRange {
 		
 	}
 
+	/**
+	 * 
+	 * @param start
+	 * @param end
+	 */
+	public ValueRange(double start, double end) {
+		this.start = start;
+		this.end = end;
+	}
 
 	/**
 	 * 
@@ -45,16 +57,24 @@ public class ValueRange {
 		return this.end;
 	}
 
-	public int getID() {
+
+	/**
+	 * @return the internalId
+	 */
+	
+	public int getId() {
 		return this.id;
 	}
 
 	/**
-	 * 
-	 * @param ID
+	 * @param internalId the internalId to set
 	 */
-	public void setID(int id) {
+
+
+	public void setId(int id) {
 		this.id=id;
+
 	}
 
+	
 }

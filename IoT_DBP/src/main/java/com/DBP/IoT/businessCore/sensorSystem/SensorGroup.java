@@ -49,11 +49,13 @@ class SensorGroup {
 	 * @param value
 	 */
 	public EnumScale getValueRisk(double value) {
+
 		if (this.hasValueRange()) {
 			for(ValueRangeRisk range : this.valueRanges) {
 				if (range.isIn(value)) {
 					return range.getRisk();
 				}
+
 			}
 		}
 		throw new UnsupportedOperationException();
@@ -70,9 +72,11 @@ class SensorGroup {
 	 * @param type
 	 */
 	public SensorGroup(String groupIdentifier, SensorGroupToPosition position, SensorType type) {
+
 		this.groupIdentifier=groupIdentifier;
 		this.position=position;
 		this.type=type;
+
 	}
 
 	
