@@ -20,10 +20,9 @@ class SensorType {
 	public SensorType() {
 		
 	}
-	public SensorType(int id,String sensorTypeIdentifier,String measureUnit,List<SensorDataField> sensorFormat ) {
+	public SensorType(String sensorTypeIdentifier,String measureUnit,List<SensorDataField> sensorFormat ) {
 		this.sensorFormat=sensorFormat;
 		this.sensorTypeIdentifier=sensorTypeIdentifier;
-		this.id=id;
 		this.measureUnit=measureUnit;
 		
 	}

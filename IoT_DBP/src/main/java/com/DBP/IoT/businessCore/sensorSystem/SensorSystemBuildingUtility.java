@@ -1,7 +1,6 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
-
-
+import java.util.List;
 
 class SensorSystemBuildingUtility {
 
@@ -12,8 +11,11 @@ class SensorSystemBuildingUtility {
 	 * @param group
 	 */
 	public Sensor buildSensor(String publicId, String brand, SensorGroup group) {
-		// TODO - implement SensorSystemBuildingUtility.buildSensor
-		throw new UnsupportedOperationException();
+		Sensor sensor = new Sensor(publicId,brand,group);
+		
+		return sensor;
+		
+			
 	}
 
 	/**
@@ -23,8 +25,8 @@ class SensorSystemBuildingUtility {
 	 * @param position
 	 */
 	public SensorGroup buildSensorGroup(SensorType type, String identifier, SensorGroupToPosition position) {
-		// TODO - implement SensorSystemBuildingUtility.buildSensorGroup
-		throw new UnsupportedOperationException();
+		SensorGroup group= new SensorGroup(identifier,position,type);
+		return group;
 	}
 
 	/**
@@ -33,9 +35,10 @@ class SensorSystemBuildingUtility {
 	 * @param um
 	 * @param formatDetails
 	 */
-	public SensorType buildSensorType(String identifier, String um, Collection formatDetails) {
-		// TODO - implement SensorSystemBuildingUtility.buildSensorType
-		throw new UnsupportedOperationException();
+	public SensorType buildSensorType(String sensorTypeIdentifier,String measureUnit,List<SensorDataField> sensorFormat) {
+		SensorType type= new SensorType( sensorTypeIdentifier,measureUnit, sensorFormat );
+		return type;
+		
 	}
 
 }

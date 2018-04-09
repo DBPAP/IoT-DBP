@@ -1,7 +1,6 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
-import com.DBP.IoT.Client;
-import Site;
+
 
 public class SensorSystemInformation {
 

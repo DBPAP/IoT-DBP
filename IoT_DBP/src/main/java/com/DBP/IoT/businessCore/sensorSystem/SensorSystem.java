@@ -9,9 +9,9 @@ public class SensorSystem {
 
 	private static SensorSystem instance;
 	
-	private   Map<String,Sensor> sensors;
-	private   Map<String,SensorGroup> sensorGroups ;
-	private   Map<String,SensorType> sensorTypes;
+	private   Map<String,Sensor> sensors= new HashMap<String,Sensor>();
+	private   Map<String,SensorGroup> sensorGroups = new HashMap<String,SensorGroup>();
+	private   Map<String,SensorType> sensorTypes=new HashMap<String,SensorType>();
 	
 	/**
 	 * 
@@ -30,9 +30,7 @@ public class SensorSystem {
 	}
 
 	private SensorSystem() {
-		this.sensors = new HashMap<String,Sensor>();
-		this.sensorGroups = new HashMap<String,SensorGroup>();
-		this.sensorTypes = new HashMap<String,SensorType>();
+		
 	}
 	/**
 	 * 
