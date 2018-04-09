@@ -4,14 +4,13 @@ package com.DBP.IoT.businessCore.sensorSystem;
 
 class SensorDataField {
 
-	private int ID;
+	private int id;
 	private int cipherLength;
 	private String type;
 	private String name;
 
 	public SensorDataField() {
-		// TODO - implement SensorDataField.SensorDataField
-		throw new UnsupportedOperationException();
+		
 	}
 
 	/**
@@ -20,24 +19,13 @@ class SensorDataField {
 	 * @param type
 	 * @param length
 	 */
-	public SensorDataField(String name, String type, int length) {
-		// TODO - implement SensorDataField.SensorDataField
-		throw new UnsupportedOperationException();
+	public SensorDataField(String name, String type, int cipherLength) {
+		this.name=name;
+		this.type=type;
+		this.cipherLength=cipherLength;
 	}
 
-	public int getID() {
-		// TODO - implement SensorDataField.getID
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param ID
-	 */
-	public void setID(int ID) {
-		// TODO - implement SensorDataField.setID
-		throw new UnsupportedOperationException();
-	}
+	
 
 	public int getCipherLength() {
 		return this.cipherLength;
@@ -73,6 +61,20 @@ class SensorDataField {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
