@@ -22,16 +22,21 @@ public class SensorSystem {
 	}
 
 	public static SensorSystem getIstance() {
-		if (instance==null) {
+		if (SensorSystem.instance==null) {
 			
 			instance = new SensorSystem();
 			}
-			return instance;
+			return SensorSystem.instance;
 	}
 
 	private SensorSystem() {
 		
 	}
+	
+	public Sensor getSensor(String publicID) {
+		return sensors.get(publicID);
+	}
+	
 	/**
 	 * 
 	 * @param publicID

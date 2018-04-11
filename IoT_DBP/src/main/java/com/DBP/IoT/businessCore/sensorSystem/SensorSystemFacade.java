@@ -1,6 +1,6 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
-import IoTIncSensorDetail;
+//import IoTIncSensorDetail;
 
 public class SensorSystemFacade {
 
@@ -9,8 +9,9 @@ public class SensorSystemFacade {
 	 * @param publicID
 	 */
 	public SensorType getSensorTypeByPublicID(String publicID) {
-		// TODO - implement SensorSystemFacade.getSensorTypeByPublicID
-		throw new UnsupportedOperationException();
+		SensorSystem s = SensorSystem.getIstance();
+		return s.getSensor(publicID).getType();
+	
 	}
 
 	/**
@@ -30,11 +31,12 @@ public class SensorSystemFacade {
 	/**
 	 * 
 	 * @param publicID
-	 */
+	 *
 	public IoTIncSensorDetail getSensorDetailByPublicID(String publicID) {
 		// TODO - implement SensorSystemFacade.getSensorDetailByPublicID
 		throw new UnsupportedOperationException();
 	}
+	*/
 
 	/**
 	 * 
@@ -44,6 +46,7 @@ public class SensorSystemFacade {
 	 * @param risk
 	 */
 	public void setValueRangeRisk(SensorGroup group, double start, double end, EnumScale risk) {
+		
 		// TODO - implement SensorSystemFacade.setValueRangeRisk
 		throw new UnsupportedOperationException();
 	}
