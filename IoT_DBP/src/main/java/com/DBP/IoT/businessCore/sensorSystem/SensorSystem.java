@@ -33,16 +33,13 @@ public class SensorSystem {
 		
 	}
 	
-	public Sensor getSensor(String publicID) {
-		return sensors.get(publicID);
-	}
-	
+
 	/**
 	 * 
 	 * @param publicID
 	 */
-	public void getSensorByPublicID(String publicID) {
-		sensors.get(publicID);
+	Sensor getSensorByPublicID(String publicID) {
+		return sensors.get(publicID);
 	}
 
 	/**

@@ -10,7 +10,7 @@ public class SensorSystemFacade {
 	 */
 	public SensorType getSensorTypeByPublicID(String publicID) {
 		SensorSystem s = SensorSystem.getIstance();
-		return s.getSensor(publicID).getType();
+		return s.getSensorByPublicID(publicID).getType();
 	
 	}
 
