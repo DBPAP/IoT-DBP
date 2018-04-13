@@ -1,6 +1,12 @@
 package com.DBP.IoT.businessCore.sensorSystem;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 /**
  * Rappresenta un intervallo di valori reali su R.
  * L'intervallo non può essere chiuso per assicurare la continuità su R di intervalli adiacenti.
@@ -11,12 +17,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author DiBenedetto & Paolicelli
  *
  */
+@Entity
+@Table(name="valueRange")
 public class ValueRange {
 
 
-
+	@Id
+	@GeneratedValue
 	private int id;
+	@Column(name="start")
 	private double start;
+	@Column(name="end")
 	private double end;
 
 	public ValueRange() {

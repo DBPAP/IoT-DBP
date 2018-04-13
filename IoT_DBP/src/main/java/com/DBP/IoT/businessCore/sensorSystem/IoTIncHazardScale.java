@@ -1,6 +1,8 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
-public enum IoTIncHazardScale implements EnumScale {
+
+
+public enum IoTIncHazardScale{
 	NONE, LOW, MEDIUM, HIGH, CRITICAL;
 
 }

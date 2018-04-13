@@ -1,18 +1,28 @@
 package com.DBP.IoT.businessCore.sensorSystem;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 
 import java.util.List;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-
+@Entity
+@Table(name="sensorType")
 class SensorType {
-
+	@Id
+	@GeneratedValue
 	private int id;
+	@Column(name="sensorTypeIdentifier")
 	private String sensorTypeIdentifier;
+	@Column(name="measureUnit")
 	private String measureUnit;
+	@OneToMany(mappedBy="name")
 	private List<SensorDataField> sensorFormat;
 	
 

@@ -1,12 +1,26 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-
+@Entity
+@Table(name="sensorDataField")
 class SensorDataField {
-
+	@Id
+	@GeneratedValue
 	private int id;
+	@Column(name="cipherLength")
 	private int cipherLength;
+	@Column(name ="type")
 	private String type;
+	@Column(name ="name")
 	private String name;
 
 	public SensorDataField() {

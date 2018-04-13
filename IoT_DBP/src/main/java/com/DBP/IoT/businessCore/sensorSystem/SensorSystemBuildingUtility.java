@@ -24,7 +24,7 @@ class SensorSystemBuildingUtility {
 	 * @param identifier
 	 * @param position
 	 */
-	public SensorGroup buildSensorGroup(SensorType type, String identifier, SensorGroupToPosition position) {
+	public SensorGroup buildSensorGroup(SensorType type, String identifier, String position) {
 		SensorGroup group= new SensorGroup(identifier,position,type);
 		return group;
 	}

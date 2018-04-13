@@ -1,39 +1,37 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
-import IoTIncSensorDetail;
+import java.util.EnumSet;
 
 public class SensorSystemFacade {
-
+	private SensorSystem s;
 	/**
 	 * 
 	 * @param publicID
 	 */
 	public SensorType getSensorTypeByPublicID(String publicID) {
-		// TODO - implement SensorSystemFacade.getSensorTypeByPublicID
-		throw new UnsupportedOperationException();
+		s=SensorSystem.getIstance();
+		SensorType sensor = s.getSensorTypeByPublicID(publicID);
+		return sensor;
+		
+		
 	}
 
 	/**
 	 * 
 	 * @param information
 	 */
-	public void setSystemInformation(SensorSystemInformation information) {
-		// TODO - implement SensorSystemFacade.setSystemInformation
-		throw new UnsupportedOperationException();
-	}
-
-	public SensorSystemInformation getSystemInformation() {
-		// TODO - implement SensorSystemFacade.getSystemInformation
-		throw new UnsupportedOperationException();
-	}
+	
 
 	/**
 	 * 
 	 * @param publicID
 	 */
-	public IoTIncSensorDetail getSensorDetailByPublicID(String publicID) {
-		// TODO - implement SensorSystemFacade.getSensorDetailByPublicID
-		throw new UnsupportedOperationException();
+	public  Sensor getSensorDetailByPublicID(String publicID) {
+		s=SensorSystem.getIstance();
+		Sensor sensor=s.getSensorByPublicID(publicID);
+	
+		return sensor;
+		
 	}
 
 	/**
@@ -43,8 +41,8 @@ public class SensorSystemFacade {
 	 * @param end
 	 * @param risk
 	 */
-	public void setValueRangeRisk(SensorGroup group, double start, double end, EnumScale risk) {
-		// TODO - implement SensorSystemFacade.setValueRangeRisk
+	public void setValueRangeRisk(SensorGroup group, double start, double end, EnumSet<IoTIncHazardScale> risk) {
+		
 		throw new UnsupportedOperationException();
 	}
 

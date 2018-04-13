@@ -1,17 +1,34 @@
 package com.DBP.IoT.businessCore.sensorSystem;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.EnumSet;
+
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
+@Entity
+@Table(name="valueRangeRisk")
 public class ValueRangeRisk {
 
-
+	@Id
+	@GeneratedValue
 	private int internalId;
-
-	private EnumScale risk;
-
+	@Column(name = "risk")
+	@Enumerated(EnumType.STRING)
+	private IoTIncHazardScale risk;
+	@Column(name="groupId")
 	private String groupId;
-
+	@OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
 	private ValueRange range;
 
 	
@@ -25,7 +42,7 @@ public class ValueRangeRisk {
 	 * @param end
 	 * @param risk
 	 */
-	public ValueRangeRisk(double start, double end, EnumScale risk,String groupId) {
+	public ValueRangeRisk(double start, double end, IoTIncHazardScale risk,String groupId) {
 		this.range=new ValueRange(start,end);
 		this.risk=risk;
 		this.groupId=groupId;
@@ -46,7 +63,7 @@ public class ValueRangeRisk {
 	 * 
 	 * @param risk
 	 */
-	public void setRisk(EnumScale risk) {
+	public void setRisk(IoTIncHazardScale risk) {
 		this.risk = risk;
 	}
 	/**
@@ -78,7 +95,7 @@ public class ValueRangeRisk {
 
 	
 
-	public EnumScale getRisk() {
+	public IoTIncHazardScale getRisk() {
 		return this.risk;
 	}
 

@@ -5,14 +5,31 @@ package com.DBP.IoT.businessCore.sensorSystem;
 import java.util.*;
 
 
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name="sensorGroup")
 class SensorGroup {
-
+	@Id
+	@GeneratedValue
 	private int internalId;
+	@Column(name="groupIdentifier")
 	private String groupIdentifier;
-	private SensorGroupToPosition position;
+	@Column(name="position")
+	private String position;
+	@OneToMany(mappedBy="internalId")
 	private List<ValueRangeRisk> valueRanges = new ArrayList<ValueRangeRisk>();
+	@OneToMany(mappedBy="group")
 	private List<Sensor> sensors = new ArrayList<Sensor>();
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="sensorTypeIdentifier")
 	private SensorType type;
 	
 
@@ -32,7 +49,7 @@ class SensorGroup {
 	 * 
 	 * @param position
 	 */
-	public void setPosition(SensorGroupToPosition position) {
+	public void setPosition(String position) {
 		this.position = position;
 	}
 
@@ -48,7 +65,7 @@ class SensorGroup {
 	 * 
 	 * @param value
 	 */
-	public EnumScale getValueRisk(double value) {
+	public IoTIncHazardScale getValueRisk(double value) {
 
 		if (this.hasValueRange()) {
 			for(ValueRangeRisk range : this.valueRanges) {
@@ -71,7 +88,7 @@ class SensorGroup {
 	 * @param position
 	 * @param type
 	 */
-	public SensorGroup(String groupIdentifier, SensorGroupToPosition position, SensorType type) {
+	public SensorGroup(String groupIdentifier, String position, SensorType type) {
 
 		this.groupIdentifier=groupIdentifier;
 		this.position=position;
@@ -108,7 +125,7 @@ class SensorGroup {
 		this.groupIdentifier = groupIdentifier;
 	}
 
-	public SensorGroupToPosition getPosition() {
+	public String getPosition() {
 		return this.position;
 	}
 

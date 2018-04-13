@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class SensorSystem {
 
-	private static SensorSystem instance;
+	private static SensorSystem instance=null;
 	
 	private   Map<String,Sensor> sensors= new HashMap<String,Sensor>();
 	private   Map<String,SensorGroup> sensorGroups = new HashMap<String,SensorGroup>();
@@ -23,10 +23,9 @@ public class SensorSystem {
 
 	public static SensorSystem getIstance() {
 		if (instance==null) {
-			
 			instance = new SensorSystem();
 			}
-			return instance;
+			return SensorSystem.instance;
 	}
 
 	private SensorSystem() {
@@ -35,9 +34,10 @@ public class SensorSystem {
 	/**
 	 * 
 	 * @param publicID
+	 * @return 
 	 */
-	public void getSensorByPublicID(String publicID) {
-		sensors.get(publicID);
+	public Sensor getSensorByPublicID(String publicID) {
+		return sensors.get(publicID);
 	}
 
 	/**
@@ -116,5 +116,11 @@ public class SensorSystem {
 		}
 			
 	}
+
+	public SensorType getSensorTypeByPublicID(String publicID) {
+		return sensorTypes.get(publicID);
+	}
+
+	
 }
 

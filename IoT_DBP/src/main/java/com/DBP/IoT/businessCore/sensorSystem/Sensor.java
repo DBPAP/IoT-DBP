@@ -1,12 +1,29 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="sensor")
 class Sensor {
-
+	@Id
+	@GeneratedValue
 	private int internalID;
+	@Column(name="publicId")
 	private String publicID;
+	@Column(name="brand")
 	private String brand;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="groupIdentifier")
 	private SensorType type;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="sensorTypeIdentifier")
 	private SensorGroup group;
 
 	public SensorType getType() {
