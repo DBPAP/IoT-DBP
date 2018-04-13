@@ -22,7 +22,9 @@ public class SensorSystem {
 	}
 
 	public static SensorSystem getIstance() {
-		if (instance==null) {
+
+
+		if (SensorSystem.instance==null) {
 			instance = new SensorSystem();
 			}
 			return SensorSystem.instance;
@@ -31,12 +33,16 @@ public class SensorSystem {
 	private SensorSystem() {
 		
 	}
+	
+
 	/**
 	 * 
 	 * @param publicID
 	 * @return 
 	 */
+
 	public Sensor getSensorByPublicID(String publicID) {
+
 		return sensors.get(publicID);
 	}
 
