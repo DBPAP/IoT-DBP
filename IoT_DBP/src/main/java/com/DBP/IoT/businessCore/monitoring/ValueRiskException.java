@@ -1,13 +1,15 @@
-package businessCore.monitoring;
+package com.DBP.IoT.businessCore.monitoring;
 
-import ValueRisk;
+import com.DBP.IoT.businessCore.sensorSystem.IoTIncHazardScale;
+
+
 
 public class ValueRiskException extends SensorException {
 
 	private int measureID;
-	private ValueRisk risk;
+	private IoTIncHazardScale risk;
 
-	public ValueRisk getRisk() {
+	public IoTIncHazardScale getRisk() {
 		return this.risk;
 	}
 
@@ -15,7 +17,7 @@ public class ValueRiskException extends SensorException {
 	 * 
 	 * @param risk
 	 */
-	public void setRisk(ValueRisk risk) {
+	public void setRisk(IoTIncHazardScale risk) {
 		this.risk = risk;
 	}
 

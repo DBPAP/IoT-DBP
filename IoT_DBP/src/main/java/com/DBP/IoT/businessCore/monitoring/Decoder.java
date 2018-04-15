@@ -1,4 +1,4 @@
-package businessCore.monitoring;
+package com.DBP.IoT.businessCore.monitoring;
 
-public abstract class Decoder {
+public interface Decoder {
 }

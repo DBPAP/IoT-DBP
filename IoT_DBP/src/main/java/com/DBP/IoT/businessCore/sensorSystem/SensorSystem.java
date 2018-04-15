@@ -28,6 +28,7 @@ public class SensorSystem {
 			instance = new SensorSystem();
 			}
 			return SensorSystem.instance;
+			
 	}
 
 	private SensorSystem() {

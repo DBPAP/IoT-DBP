@@ -1,23 +1,20 @@
-package businessCore.measure;
+package com.DBP.IoT.businessCore.measure;
 
-import string;
-import Collection;
-import LocalDateTime;
-import BigDecimal;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class IoTIncMeasure implements Measure {
-
+	private BigDecimal measuredValue;
 	private int internalID;
-	private string sensorPublicID;
-	private string description;
-	private Collection measureDetails;
+	private String sensorPublicID;
+	private String description;
+	private Measure measureDetails;
 	private LocalDateTime timestamp;
 	private String sensorGroup;
 	private String type;
 
 	public IoTIncMeasure() {
-		// TODO - implement IoTIncMeasure.IoTIncMeasure
-		throw new UnsupportedOperationException();
+		
 	}
 
 	/**
@@ -26,26 +23,24 @@ public class IoTIncMeasure implements Measure {
 	 * @param description
 	 * @param measureDetails
 	 */
-	public IoTIncMeasure(string sensorID, string description, Collection measureDetails) {
+	public IoTIncMeasure(String sensorID, String description, Measure measureDetails) {
 		// TODO - implement IoTIncMeasure.IoTIncMeasure
 		throw new UnsupportedOperationException();
 	}
 
 	public int getID() {
-		// TODO - implement IoTIncMeasure.getID
-		throw new UnsupportedOperationException();
+		return this.internalID;
 	}
 
 	/**
 	 * 
 	 * @param ID
 	 */
-	public void setID(int ID) {
-		// TODO - implement IoTIncMeasure.setID
-		throw new UnsupportedOperationException();
+	public void setID(int id) {
+		this.internalID=id;
 	}
 
-	public string getSensorPublicID() {
+	public String getSensorPublicID() {
 		return this.sensorPublicID;
 	}
 
@@ -53,11 +48,11 @@ public class IoTIncMeasure implements Measure {
 	 * 
 	 * @param sensorPublicID
 	 */
-	public void setSensorPublicID(string sensorPublicID) {
+	public void setSensorPublicID(String sensorPublicID) {
 		this.sensorPublicID = sensorPublicID;
 	}
 
-	public string getDescription() {
+	public String getDescription() {
 		return this.description;
 	}
 
@@ -65,11 +60,11 @@ public class IoTIncMeasure implements Measure {
 	 * 
 	 * @param description
 	 */
-	public void setDescription(string description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public Collection getMeasureDetails() {
+	public Measure getMeasureDetails() {
 		return this.measureDetails;
 	}
 
@@ -77,7 +72,7 @@ public class IoTIncMeasure implements Measure {
 	 * 
 	 * @param measureDetails
 	 */
-	public void setMeasureDetails(Collection measureDetails) {
+	public void setMeasureDetails(Measure measureDetails) {
 		this.measureDetails = measureDetails;
 	}
 
@@ -106,8 +101,35 @@ public class IoTIncMeasure implements Measure {
 	}
 
 	public BigDecimal getMeasuredValue() {
-		// TODO - implement IoTIncMeasure.getMeasuredValue
-		throw new UnsupportedOperationException();
+		return this.measuredValue;
+	}
+
+	/**
+	 * @return the internalID
+	 */
+	public int getInternalID() {
+		return internalID;
+	}
+
+	/**
+	 * @param internalID the internalID to set
+	 */
+	public void setInternalID(int internalID) {
+		this.internalID = internalID;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

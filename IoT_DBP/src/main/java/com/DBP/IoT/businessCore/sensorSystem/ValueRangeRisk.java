@@ -1,9 +1,7 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
-import java.util.EnumSet;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;

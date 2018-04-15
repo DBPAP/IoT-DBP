@@ -1,6 +1,6 @@
-package businessCore.measure;
+package com.DBP.IoT.businessCore.measure;
 
-import BigDecimal;
+import java.math.BigDecimal;
 
 public interface Measure {
 

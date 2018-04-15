@@ -1,12 +1,13 @@
-package businessCore.measure;
+package com.DBP.IoT.businessCore.measure;
 
-import LocalDate;
-import Observable;
-import Object;
+import java.time.LocalDate;
+import java.util.Observable;
+
+
 
 public class SummaryHandler implements Observer {
 
-	private static SummaryHandler istance;
+	private static SummaryHandler instance;
 
 	public void doCalculation() {
 		// TODO - implement SummaryHandler.doCalculation
@@ -20,27 +21,42 @@ public class SummaryHandler implements Observer {
 	 * @param endDate
 	 */
 	public void computeInPeriod(int SensorGroupId, LocalDate startDate, LocalDate endDate) {
-		// TODO - implement SummaryHandler.computeInPeriod
-		throw new UnsupportedOperationException();
+		
+
+		
 	}
 
 	private SummaryHandler() {
-		// TODO - implement SummaryHandler.SummaryHandler
+		
 		throw new UnsupportedOperationException();
 	}
 
-	public static SummaryHandler getIstance() {
-		return this.istance;
-	}
 
 	/**
 	 * 
 	 * @param subject
 	 * @param argument
 	 */
+	
+	@Override
 	public void update(Observable subject, Object argument) {
-		// TODO - implement SummaryHandler.update
 		throw new UnsupportedOperationException();
+		
 	}
+
+	/**
+	 * @return the istance
+	 */
+	public static SummaryHandler getIstance() {
+		if (SummaryHandler.instance==null) {
+			instance = new SummaryHandler();
+			}
+			return SummaryHandler.instance;
+	}
+
+	/**
+	 * @param istance the istance to set
+	 */
+
 
 }

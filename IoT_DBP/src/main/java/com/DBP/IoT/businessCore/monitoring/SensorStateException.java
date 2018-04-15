@@ -1,12 +1,13 @@
-package businessCore.monitoring;
+package com.DBP.IoT.businessCore.monitoring;
+
+
 
 public class SensorStateException extends SensorException {
 
 	private int sensorID;
 
-	public void getSensorID() {
-		// TODO - implement SensorStateException.getSensorID
-		throw new UnsupportedOperationException();
+	public int getSensorID() {
+		return this.sensorID;
 	}
 
 	/**
@@ -18,8 +19,7 @@ public class SensorStateException extends SensorException {
 	}
 
 	public SensorStateException() {
-		// TODO - implement SensorStateException.SensorStateException
-		throw new UnsupportedOperationException();
+		
 	}
 
 }

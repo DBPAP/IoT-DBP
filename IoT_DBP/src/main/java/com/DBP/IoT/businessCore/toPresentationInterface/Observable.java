@@ -1,11 +1,10 @@
-package businessCore.toPresentationInterface;
+package com.DBP.IoT.businessCore.toPresentationInterface;
 
-import Obserrver;
-import Observer;
+import java.util.Observer;
 
 public class Observable {
 
-	private Obserrver[] observers;
+	private Observer[] observers;
 
 	/**
 	 * 
@@ -25,9 +24,20 @@ public class Observable {
 		throw new UnsupportedOperationException();
 	}
 
-	public void notify() {
-		// TODO - implement Observable.notify
-		throw new UnsupportedOperationException();
+	
+
+	/**
+	 * @return the observers
+	 */
+	public Observer[] getObservers() {
+		return observers;
+	}
+
+	/**
+	 * @param observers the observers to set
+	 */
+	public void setObservers(Observer[] observers) {
+		this.observers = observers;
 	}
 
 }

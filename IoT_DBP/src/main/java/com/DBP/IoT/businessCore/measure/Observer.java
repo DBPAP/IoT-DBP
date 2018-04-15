@@ -1,7 +1,6 @@
-package businessCore.measure;
+package com.DBP.IoT.businessCore.measure;
 
-import Observable;
-import Object;
+import java.util.Observable;
 
 public interface Observer {
 

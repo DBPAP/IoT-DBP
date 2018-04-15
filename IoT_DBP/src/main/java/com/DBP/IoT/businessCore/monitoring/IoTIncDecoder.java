@@ -1,15 +1,16 @@
-package businessCore.monitoring;
+package com.DBP.IoT.businessCore.monitoring;
 
-import businessCore.measure.IoTIncMeasure;
-import string;
+import com.DBP.IoT.businessCore.measure.Measure;
 
-public class IoTIncDecoder extends Decoder {
+
+
+public class IoTIncDecoder implements Decoder {
 
 	/**
 	 * 
 	 * @param measure
 	 */
-	IoTIncMeasure decode(string measure) {
+	Measure decode(String measure) {
 		// TODO - implement IoTIncDecoder.decode
 		throw new UnsupportedOperationException();
 	}

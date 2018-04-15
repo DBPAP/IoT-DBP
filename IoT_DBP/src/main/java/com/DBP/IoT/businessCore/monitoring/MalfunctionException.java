@@ -1,5 +1,4 @@
-package businessCore.monitoring;
-
+package com.DBP.IoT.businessCore.monitoring;
 public class MalfunctionException extends SensorException {
 
 	private int sensorID;

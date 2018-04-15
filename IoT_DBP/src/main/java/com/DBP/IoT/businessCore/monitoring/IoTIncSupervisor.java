@@ -1,14 +1,15 @@
-package businessCore.monitoring;
+package com.DBP.IoT.businessCore.monitoring;
 
-import businessCore.sensorSystem.EnumScale;
-import businessCore.measure.IoTIncMeasure;
-import businessCore.measure.Measure;
 
-public class IoTIncSupervisor extends Supervisor {
+import com.DBP.IoT.businessCore.measure.IoTIncMeasure;
+import com.DBP.IoT.businessCore.measure.Measure;
+import com.DBP.IoT.businessCore.sensorSystem.IoTIncHazardScale;
+import com.DBP.IoT.businessCore.sensorSystem.SensorSystem;
+public class IoTIncSupervisor implements Supervisor {
 
 	private int checkFrequency;
-	private EnumScale riskScale;
-	private static IoTIncSupervisor istance;
+	private IoTIncHazardScale riskScale;
+	private static IoTIncSupervisor instance;
 
 	/**
 	 * 
@@ -34,7 +35,10 @@ public class IoTIncSupervisor extends Supervisor {
 	}
 
 	public static IoTIncSupervisor getIstance() {
-		return this.istance;
+		if (IoTIncSupervisor.instance==null) {
+			instance = new IoTIncSupervisor();
+			}
+			return IoTIncSupervisor.instance;
 	}
 
 	private void SuperVisor() {
@@ -63,7 +67,7 @@ public class IoTIncSupervisor extends Supervisor {
 		this.checkFrequency = checkFrequency;
 	}
 
-	public EnumScale getRiskScale() {
+	public IoTIncHazardScale getRiskScale() {
 		return this.riskScale;
 	}
 
@@ -71,7 +75,7 @@ public class IoTIncSupervisor extends Supervisor {
 	 * 
 	 * @param riskScale
 	 */
-	public void setRiskScale(EnumScale riskScale) {
+	public void setRiskScale(IoTIncHazardScale riskScale) {
 		this.riskScale = riskScale;
 	}
 

@@ -1,7 +1,6 @@
-package businessCore.dataTransfer;
-
-import Observable;
-import Object;
+package com.DBP.IoT.businessCore.dataTransfer;
+import java.util.Observable;
+import java.util.Observer;
 
 public class TransferRuleHandler implements Observer {
 

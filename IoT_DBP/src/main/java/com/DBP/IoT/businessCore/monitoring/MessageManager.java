@@ -1,15 +1,19 @@
-package businessCore.monitoring;
+package com.DBP.IoT.businessCore.monitoring;
 
-import businessCore.Observable;
-import string;
+import java.util.Observable;
+/**
+ * Classe astratta che gestisce i messaggi
+ * @author Alessandro
+ *
+ */
 
-public class MessageManager extends Observable {
+public abstract class MessageManager extends Observable {
 
 	/**
 	 * 
 	 * @param misura
 	 */
-	public void newMeasure(string misura) {
+	public void newMeasure(String misura) {
 		// TODO - implement MessageManager.newMeasure
 		throw new UnsupportedOperationException();
 	}
