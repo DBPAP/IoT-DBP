@@ -1,10 +1,18 @@
+/**
+ * SUPERVISORE DEL CONTROLLO
+ */
+
 package com.DBP.IoT.businessCore.monitoring;
 
 
 import com.DBP.IoT.businessCore.measure.IoTIncMeasure;
 import com.DBP.IoT.businessCore.measure.Measure;
 import com.DBP.IoT.businessCore.sensorSystem.IoTIncHazardScale;
-import com.DBP.IoT.businessCore.sensorSystem.SensorSystem;
+/**
+ * implementazione del supervisore di controllo
+ * @author Alessandro
+ *
+ */
 public class IoTIncSupervisor implements Supervisor {
 
 	private int checkFrequency;

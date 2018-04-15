@@ -14,12 +14,12 @@ import javax.persistence.Table;
  * Se "end = +∞", allora start dovrà essere un numero reale oppure -∞;
  * Se start ed end sono due numeri reali allora l'intervallo è chiuso a sinistra ed aperto a destra :
  *  "[start, end["
- * @author DiBenedetto & Paolicelli
+ * @author DiBenedetto 
  *
  */
 @Entity
 @Table(name="valueRange")
-public class ValueRange {
+ class ValueRange {
 
 
 	@Id
@@ -30,7 +30,7 @@ public class ValueRange {
 	@Column(name="end")
 	private double end;
 
-	public ValueRange() {
+	 ValueRange() {
 		
 	}
 
@@ -39,7 +39,7 @@ public class ValueRange {
 	 * @param start
 	 * @param end
 	 */
-	public ValueRange(double start, double end) {
+	 ValueRange(double start, double end) {
 		this.start = start;
 		this.end = end;
 	}

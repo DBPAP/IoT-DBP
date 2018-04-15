@@ -1,5 +1,9 @@
 package com.DBP.IoT.businessCore.monitoring;
-
+/**
+ * Implementazione del message manager
+ * @author Alessandro
+ *
+ */
 public class IoTIncMessageManager extends MessageManager {
 
 	public void run() {

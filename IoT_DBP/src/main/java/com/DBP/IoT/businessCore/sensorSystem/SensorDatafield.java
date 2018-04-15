@@ -1,13 +1,12 @@
 package com.DBP.IoT.businessCore.sensorSystem;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
+
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -23,7 +22,7 @@ class SensorDataField {
 	@Column(name ="name")
 	private String name;
 
-	public SensorDataField() {
+	 SensorDataField() {
 		
 	}
 
@@ -33,7 +32,7 @@ class SensorDataField {
 	 * @param type
 	 * @param length
 	 */
-	public SensorDataField(String name, String type, int cipherLength) {
+	 SensorDataField(String name, String type, int cipherLength) {
 		this.name=name;
 		this.type=type;
 		this.cipherLength=cipherLength;

@@ -1,4 +1,9 @@
 package com.DBP.IoT.businessCore.monitoring;
+/**
+ * Classe che gestisce  MalfunctionException
+ * @author Alessandro
+ *
+ */
 public class MalfunctionException extends SensorException {
 
 	private int sensorID;

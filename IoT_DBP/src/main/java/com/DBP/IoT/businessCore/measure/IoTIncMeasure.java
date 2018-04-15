@@ -2,7 +2,11 @@ package com.DBP.IoT.businessCore.measure;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
+/**
+ * classe di implementazione della misura
+ * @author Alessandro
+ *
+ */
 public class IoTIncMeasure implements Measure {
 	private BigDecimal measuredValue;
 	private int internalID;

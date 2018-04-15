@@ -3,7 +3,11 @@ package com.DBP.IoT.businessCore.monitoring;
 import com.DBP.IoT.businessCore.measure.Measure;
 
 
-
+/**
+ * Implementazione del decodificatore
+ * @author Alessandro
+ *
+ */
 public class IoTIncDecoder implements Decoder {
 
 	/**

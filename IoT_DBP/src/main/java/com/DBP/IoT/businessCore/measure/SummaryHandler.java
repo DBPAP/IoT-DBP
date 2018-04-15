@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.util.Observable;
 
 
-
+/**
+ * gestore delle sintesi
+ * @author Alessandro
+ *
+ */
 public class SummaryHandler implements Observer {
 
 	private static SummaryHandler instance;

@@ -3,7 +3,11 @@ package com.DBP.IoT.businessCore.monitoring;
 import com.DBP.IoT.businessCore.sensorSystem.IoTIncHazardScale;
 
 
-
+/**
+ * classe che gestisce le eccezioni dovute ai valori di rischio
+ * @author Alessandro
+ *
+ */
 public class ValueRiskException extends SensorException {
 
 	private int measureID;

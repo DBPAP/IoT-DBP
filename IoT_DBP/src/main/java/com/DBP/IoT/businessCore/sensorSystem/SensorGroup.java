@@ -78,7 +78,7 @@ class SensorGroup {
 		throw new UnsupportedOperationException();
 	}
 
-	public SensorGroup() {
+	 SensorGroup() {
 	
 	}
 
@@ -88,7 +88,7 @@ class SensorGroup {
 	 * @param position
 	 * @param type
 	 */
-	public SensorGroup(String groupIdentifier, String position, SensorType type) {
+	 SensorGroup(String groupIdentifier, String position, SensorType type) {
 
 		this.groupIdentifier=groupIdentifier;
 		this.position=position;

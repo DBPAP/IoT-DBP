@@ -30,7 +30,7 @@ public class ValueRangeRisk {
 	private ValueRange range;
 
 	
-	public ValueRangeRisk() {
+	 ValueRangeRisk() {
 		
 	}
 
@@ -40,7 +40,7 @@ public class ValueRangeRisk {
 	 * @param end
 	 * @param risk
 	 */
-	public ValueRangeRisk(double start, double end, IoTIncHazardScale risk,String groupId) {
+	 ValueRangeRisk(double start, double end, IoTIncHazardScale risk,String groupId) {
 		this.range=new ValueRange(start,end);
 		this.risk=risk;
 		this.groupId=groupId;

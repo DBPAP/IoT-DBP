@@ -8,7 +8,11 @@ import java.time.LocalTime;
 
 
 
-
+/**
+ * classe che gestisce le eccezioni dei sensori
+ * @author Alessandro
+ *
+ */
 public abstract class SensorException implements Exception {
 
 	private int ID;

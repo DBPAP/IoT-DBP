@@ -1,4 +1,4 @@
 package com.DBP.IoT.businessCore.toPresentationInterface;
 
-public abstract class SystemNotifier extends Observable {
+public interface class SystemNotifier extends Observable {
 }
